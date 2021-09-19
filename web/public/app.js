@@ -154,10 +154,9 @@ function DeviceRegister() {
 
 function MedRegister() {
 
-   var patientid_exist =0;
-   const patientid = $('#patientid').val();
+   const patientid = $('#patientID').val();
    const prescription = $('#prescription').val();
-   const time = $('time').val();
+   const time = $('#time').val();
    $.get(`${PRESCIPTION_URL}/prescription`)
    .then(response => {
        response.forEach(patient => {
