@@ -25,7 +25,7 @@
  
  const mongoose = require('mongoose');
  
- const User = require('./models/users');
+ const User = require('./models/prescription');
  
  mongoose.connect('mongodb+srv://kinshuk:Kinshu123@cluster0.8vugi.mongodb.net/prescription?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
  
@@ -43,10 +43,10 @@
  
  
  app.post('/api/prescription', (req, res) => {
-     const { email, medicine, time } = req.body;
+     const { email, prescription, time } = req.body;
      const newUser = new User({
          email,
-         medicine,
+         prescription,
          time
      });
      newUser.save(err => {
